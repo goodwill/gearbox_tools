@@ -1,0 +1,28 @@
+# Different section names:
+# common: Setup regardless runtime mode
+# production: Setup in production env only
+# development: Setup in development env only
+# test_env: Setup in test environment only (note: _env suffix is needed to avoid OpenStruct private method)
+common:
+    app_name: Your App Name
+    default_title: Your App Title
+    email_from_name: App Email From (Do Not Reply)
+    email_from_address: from@address.com
+    smtp:
+        address: smtp
+        port: 587
+        username: smtp_username
+        password: smtp_password
+        authentication: plain
+
+development:
+    mail_delivery_method: smtp
+    host: localhost:3000
+    # set as true if you want to raise error on mail deliveries
+    raise_delivery_errors: true
+
+test_env:
+    mail_delivery_method: test
+    host: localhost:3000
+production:
+    host: domain.com

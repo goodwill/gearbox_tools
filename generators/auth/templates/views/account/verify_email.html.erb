@@ -1,0 +1,9 @@
+<%%= flash[:notice] %>
+<%% unless @user.nil? %>
+  <h2>Welcome back, <%%= @user.first_name %></h2>
+  Please type in your password to continue:
+  <%%= form_tag :action=>:complete_verify_email, :id=>@user.id %>
+  <%%= password_field_tag :password %>
+  <%%= submit_tag 'Continue' %>
+  </form>
+<%% end %>

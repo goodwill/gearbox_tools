@@ -1,0 +1,45 @@
+<%% content_for :greeting do %>
+You are just a step away!
+<%% end %>
+
+<div class="heading">Sign Up</div>
+<div class="table">
+	<table class="signup_table">
+	    <tr class="signup_bg">
+	    <td>
+			<%%= show_error_messages(@user) %>
+			<%% form_for :user do |f| -%>
+			<p>
+				<%%= f.label :first_name, 'First Name' %>
+				<%%= f.text_field :first_name %>
+			</p>
+
+			<p>
+				<%%= f.label :last_name, 'Last Name'%>
+				<%%= f.text_field :last_name %>
+			</p>
+
+			<p>
+				<%%= f.label :email, 'Email' %>
+			<%%= f.text_field :email %></p>
+
+			<p>
+				<%%= f.label :password, 'Password' %>
+			<%%= f.password_field :password %></p>
+
+			<p>
+				<%%= f.label :password_confirmation, 'Password Confirmation' %>
+			<%%= f.password_field :password_confirmation %></p>
+
+			<p>
+				<%%= f.label :time_zone, 'Time Zone'%>
+				<%%= f.time_zone_select :time_zone %>
+			</p>
+			<div class="control">
+				<%%= f.submit 'Sign up', :class=>:button%>
+			</div>
+			<%% end -%>
+		</td>
+		</tr>
+	</table>
+</div>

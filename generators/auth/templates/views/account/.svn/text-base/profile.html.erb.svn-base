@@ -1,0 +1,69 @@
+<% content_for :breadcrumb do %>
+<ul class="breadcrumb">
+	<li class="first"><a href="#">Teamlink</a></li>
+	<li><%= link_to 'TODO', :controller=>:home %></li>
+	<li class="last"><%= link_to 'Profile', :controller=>:account, :action=>:profile %></li>
+
+</ul>
+<% end %>
+
+<div class="heading">Your Profile</div>
+
+<%= error_messages_for :user %>
+<% form_for @user, :url=>{:controller=>:account, :action=>:profile, :id=>@user} do |form| %>
+  <fieldset>
+	<legend>Change Personal Info</legend>
+  <p>
+  <%= form.label :first_name, "First Name" %>
+  <%= form.text_field :first_name %>
+  </p>
+  <p>
+  <%= form.label :last_name, "Last Name" %>
+  <%= form.text_field :last_name %>
+  </p>
+  <p>
+  <%= form.label :time_zone, "Time Zone" %>
+  <%= form.time_zone_select :time_zone %>
+  </p>
+  <div class="control">
+  <%= form.submit "Save Changes", :class=>:button  %>
+  </div>
+  </fieldset>
+<% end %>
+
+<%= form_tag :controller=>:account, :action=>:change_email, :id=>@user %>
+  <fieldset>
+	<legend>Change Email Address</legend>
+  <div>
+  Existing Email: <%= @user.email %>
+  </div>
+  <p>
+  <%= label_tag :new_email, "New Email:" %>
+  <%= text_field_tag :new_email %>
+  </p>
+  <div class="control">
+  <%= submit_tag "Change Email", :class=>:button  %>
+  </div>
+  </fieldset>
+</form>
+
+<%= form_tag :controller=>:account, :action=>:change_password, :id=>@user %>
+  <fieldset>
+	<legend>Change Password</legend>
+  <p>
+    <%= label_tag :old_password, "Existing Password:" %>
+    <%= password_field_tag :old_password %>
+  </p>
+  <p>
+    <%= label_tag :new_password, "New Password:" %>
+    <%= password_field_tag :new_password %>
+  </p>
+  <p>
+    <%= label_tag :new_password_confirmation, "New Password Again:" %>
+    <%= password_field_tag :new_password_confirmation %>
+  </p>
+  <div class="control">
+  <%= submit_tag "Change Password", :class=>:button %>
+  </div>
+</fieldset>
+</form>

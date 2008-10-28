@@ -1,0 +1,3 @@
+<%= flash[:notice] %>
+Congratulations <%= @user.first_name %>! You have successfully activated your account! 
+<%= link_to "Start using #{AppConfig.app_name}", :controller=>:home %> 

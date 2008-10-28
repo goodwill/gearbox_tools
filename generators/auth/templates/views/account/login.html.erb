@@ -1,0 +1,32 @@
+<%% content_for :greeting do %>
+Welcome back!
+<%% end %>
+<div class="heading">Login</div>
+
+<table>
+    <tr class="signup_bg">
+	    <td>
+			<p class="notice"><%%= flash[:notice]%></p>
+			<%% form_tag do -%>
+			<p><label for="email">Email</label>
+			<%%= text_field_tag 'email',nil, :size=>40 %></p>
+
+			<p><label for="password">Password</label>
+			<%%= password_field_tag 'password' %></p>
+
+			<p><label for="remember_me">Remember me:</label>
+			<%%= check_box_tag 'remember_me' %></p>
+
+			<div class='control'><%%= submit_tag 'Log in', :class=>:button %></div>
+			<%% end -%>
+			
+			
+		</td>
+	</tr>
+	<tr >
+		<td>
+			<%%= link_to 'Forgot Password', :controller=>:user_forgot, :action=>:forgot_password %><br />
+			<%%= link_to 'New Users: Sign Up For Your Account', :action=>:signup %>
+		</td>
+	</tr>
+</table>

@@ -1,0 +1,1 @@
+ActionView::Helpers::AssetTagHelper.register_javascript_expansion :jquery=>["jquery-1.2.6.min", "jquery.form", "jquery.init"]
