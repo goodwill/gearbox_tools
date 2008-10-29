@@ -9,11 +9,12 @@ common:
     email_from_name: App Email From (Do Not Reply)
     email_from_address: from@address.com
     smtp:
-        address: smtp
+        address: smtp_server
         port: 587
         username: smtp_username
         password: smtp_password
-        authentication: plain
+        # prefix authentication with tls_ to enforce tls authentication
+        authentication: tls_plain
 
 development:
     mail_delivery_method: smtp
