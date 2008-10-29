@@ -13,6 +13,7 @@ class AuthGenerator < Rails::Generator::Base
       m.directory('app/controllers')
       m.directory('lib')
       m.directory('app/views/account')
+      m.directory('config/initializers')
       
       # verify class collisions
       m.class_collisions "User", "AccountController"
@@ -24,6 +25,9 @@ class AuthGenerator < Rails::Generator::Base
         m.template("views/account/#{action_name}.html.erb",
           "app/views/account/#{action_name}.html.erb")
       end
+      
+      m.template("initializers/004_auth_system_hook.rb", 
+        "config/initializers/004_auth_system_hook.rb")      
       
       m.template("models/user.rb",
         "app/models/user.rb")
