@@ -13,6 +13,7 @@ class AuthGenerator < Rails::Generator::Base
       m.directory('app/controllers')
       m.directory('lib')
       m.directory('app/views/account')
+      m.directory('app/views/user_mailer')
       m.directory('config/initializers')
       
       # verify class collisions
