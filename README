@@ -1,13 +1,22 @@
-JustAuth
-========
+Gearbox Tools
+=============
+This is the generic template work extracted from acts_as_authenticated and action_mailer_tls.
 
-Introduction goes here.
+Difference
+==========
+* by default ActionController:Base is mixed with lib/authenticated_system.rb
+* No testing support (the test code is a mess...) but authenticated_test_helper still exists to help on doing other testing
+* AppConfig support for configuring smtp and various app settings (see config/app_config.yml)
 
+What the installation does
+==========================
+* Install Generators for authentication package (named: auth)
+* Auto-Install action_mailer_tls fork (with optional tls support)
 
-Example
-=======
-
-Example goes here.
-
-
-Copyright (c) 2008 [name of plugin creator], released under the MIT license
+Things to do after install
+==========================
+run script/generate auth to generate all authentication related files
+run script/generate common to generate other helpers
+- app_config.yml with initializer
+- mail_config initializer
+- jquery initializer if you want to use jquery (remove it from config/initializers if you don't need it)

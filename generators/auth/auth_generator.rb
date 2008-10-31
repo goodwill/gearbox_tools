@@ -40,6 +40,8 @@ class AuthGenerator < Rails::Generator::Base
           
       m.migration_template("migrate/create_user.rb",
         "db/migrate",:migration_file_name=>"create_users") unless options[:skip_migration]
+        
+      m.template('models/user_mailer.rb', 'app/models/user_mailer.rb')
       
       
     end
