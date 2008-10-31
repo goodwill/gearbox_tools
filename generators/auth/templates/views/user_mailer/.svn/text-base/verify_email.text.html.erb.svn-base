@@ -1,0 +1,14 @@
+Welcome <%= @user.full_name %>,
+<p>
+Thanks for registering <%= AppConfig.app_name %>. In order to start using the service, we would like to verify your email address. Simply click on the URL attached below, or copy the URL and paste it into the browser to finish your email verification:
+</p>
+<p>
+	<% link_address= url_for(:controller=>:account, :action=>:verify_email, :id=>@user.uid, :host=>@host, :only_path=>false ) %>
+	<%= link_to link_address, link_address %>
+</p>
+<p>
+Once again thank you for your interest on using our service!
+</p>
+<p>
+<%= AppConfig.app_name %> Team
+</p>
