@@ -43,6 +43,9 @@ class AuthGenerator < Rails::Generator::Base
         
       m.template('models/user_mailer.rb', 'app/models/user_mailer.rb')
       
+      m.template('views/user_mailer/forgot_password.text.html.erb', 'apps/views/user_mailer/forgot_password.text.html.erb')
+      m.template('views/user_mailer/verify_email.text.html.erb', 'apps/views/user_mailer/verify_email.text.html.erb')
+      
       
     end
   end
